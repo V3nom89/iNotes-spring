@@ -13,16 +13,16 @@
 </head>
 <body>
 <%@ include file="./css/header.jsp" %>
-<div class="navbar">
+
   <<div class="navbar">
   <a href="/homeadmin.jsp">Home</a>
-  <a class="active" href="/candidati/getall">Users</a>
+  <a class="active" href="/candidati/getall">Candidati</a>
   <a href="/candidati/logout" id="logout">Logout</a>
 </div>
 <br>
 <div class="main">
 
-<%CandidatiDTO c = (CandidatiDTO) request.getAttribute("dto");%>
+<%CandidatiDTO c = (CandidatiDTO) request.getSession().getAttribute("dto");%>
 
 
 <form id="floatleft" action="/candidati/update"=<%=c.getIdCandidati()%>" method="post">
@@ -124,6 +124,7 @@
  
 			</select>
     	</div>
+    	<input type="hidden" name="idCandidati" value =<%=c.getIdCandidati() %>>
   </div>
   
  
@@ -163,7 +164,7 @@
       <label for="type">Usertype</label>
     </div>
    		 <div class="col-75">
- 			<select id="type" name="usertype">
+ 			<select id="type" name="userType">
   				<option value="ADMIN">ADMIN</option>
   				<option value="USER">USER</option>
  
