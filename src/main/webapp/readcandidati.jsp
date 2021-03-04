@@ -1,11 +1,14 @@
         <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="it.contrader.dto.CandidatiDTO"%>
-<!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Read Staff</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="User Read">
+<meta name="author" content="Vittorio Valent">
+<link href="/css/vittoriostyle.css" rel="stylesheet">
+<title>Read Candidati</title>
 </head>
 <body>
 <%@ include file="./css/header.jsp"%>
@@ -17,7 +20,7 @@
 <br>
 
 <div class="main">
-<%CandidatiDTO c = (CandidatiDTO) request.getAttribute("dto");%>
+<%CandidatiDTO c = (CandidatiDTO)  request.getSession().getAttribute("dto");%>
 
 
 <table>
