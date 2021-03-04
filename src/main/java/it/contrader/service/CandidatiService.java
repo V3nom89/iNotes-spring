@@ -8,6 +8,7 @@ import it.contrader.dto.CandidatiDTO;
 
 import it.contrader.model.Candidati;
 
+@Service
 public class CandidatiService extends AbstractService<Candidati, CandidatiDTO> {
 	
 	@Autowired
