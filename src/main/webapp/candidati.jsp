@@ -16,11 +16,11 @@
 
 <div class="navbar">
   <a href="/homeadmin.jsp">Home</a> <a class="active"
-			href="candidati">Candidati</a> <a href="/candidati/logout" id="logout">Logout</a>
+			href="/candidati/getall">Candidati</a> <a href="/candidati/logout" id="logout">Logout</a>
 </div>
 <div class="main">
 	<%
-		List<CandidatiDTO> list = (List<CandidatiDTO>) request.getAttribute("list");
+		List<CandidatiDTO> list = (List<CandidatiDTO>) request.getSession().getAttribute("list");
 	%>
 
 <br>
@@ -52,7 +52,7 @@
 			for (CandidatiDTO c : list) {
 		%>
 		<tr>
-			<td><a href="/user/read?idCandidati=<%=c.getIdCandidati() %>">
+			<td><a href="/candidati/read?idCandidati=<%=c.getIdCandidati() %>">
 					<%=c.getIdCandidati()%>
 			</a></td>
 			<td><%=c.getIdStaff() %></td>
@@ -72,9 +72,9 @@
 			<td><%=c.getUserType()%></td>
 			
 			
-			<td><a href="/candidati/preupdate?id==<%=c.getIdCandidati()%>">Edit</a>
+			<td><a href="/candidati/preupdate?idCandidati=<%=c.getIdCandidati()%>">Edit</a>
 			</td>
-			<td><a href="/candidati/delete?id=<%=c.getIdCandidati()%>">Delete</a>
+			<td><a href="/candidati/delete?idCandidati=<%=c.getIdCandidati()%>">Delete</a>
 			</td>
 
 		</tr>
@@ -85,7 +85,7 @@
 
 
 
-<form id="floatright" action="/user/insert"  method="post">
+<form id="floatright" action="/candidati/insert"  method="post">
 <div class="row">
     <div class="col-25">
      <label for="pass">idStaff</label>
@@ -201,7 +201,7 @@
       <label for="type">Idoneita</label>
     </div>
    		 <div class="col-75">
- 			<select id="coll" name="idoneita" placeholder="Il candidato e' idoneo?">
+ 			<select id="ido" name="idoneita" placeholder="Il candidato e' idoneo?">
   				<option value="true">SI</option>
   				<option value="false">NO</option>
  
@@ -222,7 +222,7 @@
       <label for="type">Usertype</label>
     </div>
    		 <div class="col-75">
- 			<select id="type" name="usertype">
+ 			<select id="type" name="userType">
   				<option value="ADMIN">ADMIN</option>
   				<option value="USER">USER</option>
  
