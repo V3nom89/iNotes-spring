@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import it.contrader.converter.CandidatiConverter;
 import it.contrader.dao.CandidatiRepository;
 import it.contrader.dto.CandidatiDTO;
+import org.springframework.stereotype.Service;
 
 import it.contrader.model.Candidati;
 
