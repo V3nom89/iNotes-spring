@@ -24,6 +24,9 @@
 		<a class="active" href="/homeadmin.jsp">Home</a> <a href=/user/getall>Users</a>
 		<a href="/user/logout" id="logout">Logout</a>
 		<a href="/candidati/getall">Candidati</a>
+		<a href="/corso/getall">Corso</a>
+		<a href="/iterselettivo/getall">IterSelettivo</a>
+		<a href="/staff/getall">Staff</a>
 	</div>
 
 	<div class="main">
